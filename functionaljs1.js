@@ -60,46 +60,21 @@ console.assert(squares[2] === 9)
 console.assert(squares[3] === 16)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // ----------------------------
 // using reduce() from above, write your own filter()
 // that takes an array and a function
 // ----------------------------
 
-function filter(array, callback){
+//function filter(array, callback){
     // YOUR CODE HERE
+    ["1", "2", "3", "4"].filter((v)) = v.length = 5
 }
 
 // tests
 // ---
-var evens = filter([1, 2, 3, 4], function(v){ return v%2 === 0 })
-console.assert(evens[0] === 2)
-console.assert(evens[1] === 4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//var evens = filter([1, 2, 3, 4], function(v){ return v%2 === 0 })
+//console.assert(evens[0] === 2)
+//console.assert(evens[1] === 4)
 
 
 // ----------------------------
@@ -109,6 +84,7 @@ console.assert(evens[1] === 4)
 
 function sum(){
     // YOUR CODE HERE
+    function sumVaridic(){ return [].slice.call(arguments).red
 }
 
 // tests
@@ -116,20 +92,6 @@ function sum(){
 console.assert(sum(1, 2, 3) === 6)
 console.assert(sum(1, 2, 3, 4) === 10)
 console.assert(sum(1, 2, 3, 4, 5) === 15)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // ----------------------------
@@ -145,6 +107,11 @@ var names = [
 
 names.sort(function(a, b){
     // YOUR CODE HERE
+    user.sort(function a, b){
+        if(a.name < b.name) return -1;
+        if(a.name > b.name) return 1;
+        return 0;
+    })
 })
 
 // tests
@@ -152,13 +119,6 @@ names.sort(function(a, b){
 console.assert(names[0].name === "Brian")
 console.assert(names[1].name === "Jesse")
 console.assert(names[2].name === "Matt")
-
-
-
-
-
-
-
 
 
 
