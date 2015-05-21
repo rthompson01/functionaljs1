@@ -1,15 +1,16 @@
 //  Part I
 
 // ----------------------------
-// write your own forEach() function that takes an array and a function
+// 0. write your own forEach() function that takes an array and a function
 // ----------------------------
 
-function forEach(array, callback){
+function forEach(array, callback) {
     // YOUR CODE HERE
     for (var i = 0; i < array.length; i++) {
     callback(array[i])
 }
 }
+
 
 // tests
 // ---
@@ -20,16 +21,19 @@ console.assert(total === 24)
 
 
 // ----------------------------
-// using forEach() from above, write your own reduce()
+// 1. using forEach() from above, write your own reduce()
 // that takes an array and a function
 // ----------------------------
 
-function reduce(array, callback){
-    // YOUR CODE HERE
-[1, 2, 3, 4].reduce((a, v) => a + V. 0)
-function sum(a, v){
-    return a+v
+function reduce(arr, cb, defaultValue){
+        // YOUR CODE HERE
+    var a = defaultValue ? defaultValue : arr.shift()
+    forEach(arr, function(v, i, arr){
+        a = cb(a, v, i, arr)
+    })
+    return a
 }
+
 
 // tests
 // ---
@@ -39,7 +43,7 @@ console.assert(
 
 
 // ----------------------------
-// using forEach() from above, write your own map()
+// 2. using forEach() from above, write your own map()
 // that takes an array and a function
 // ----------------------------
 
@@ -61,11 +65,11 @@ console.assert(squares[3] === 16)
 
 
 // ----------------------------
-// using reduce() from above, write your own filter()
+// 3. using reduce() from above, write your own filter()
 // that takes an array and a function
 // ----------------------------
 
-//function filter(array, callback){
+function filter(array, callback){
     // YOUR CODE HERE
     ["1", "2", "3", "4"].filter((v)) = v.length = 5
 }
@@ -78,7 +82,7 @@ console.assert(squares[3] === 16)
 
 
 // ----------------------------
-// using reduce() from above, write your own sum()
+// 4. using reduce() from above, write your own sum()
 // that adds up all arguments to sum (note: variadic behavior)
 // ----------------------------
 
@@ -95,7 +99,7 @@ console.assert(sum(1, 2, 3, 4, 5) === 15)
 
 
 // ----------------------------
-// using Array.sort(), sort the following array
+// 5. using Array.sort(), sort the following array
 // of people by last name
 // ----------------------------
 
@@ -123,7 +127,7 @@ console.assert(names[2].name === "Matt")
 
 
 // ----------------------------
-// Using Array.map(), Array.filter(), and Array.sort() on the
+// 6. Using Array.map(), Array.filter(), and Array.sort() on the
 // array below:
 // - filter for customers whose first-names start with 'J',
 // - map to their fullnames,
