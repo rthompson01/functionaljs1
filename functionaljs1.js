@@ -150,13 +150,24 @@ var customers = [
 var results = customers
     .filter(function(){
         // YOUR CODE HERE
-        var results = customers.filter(function(first){
+        var results = customers.filter(function(first) 
+            text()[0] === J{
     })
+    }
+    )
     .map(function(){
         // YOUR CODE HERE
+        .map(function(fullname) {
+            return fullname.customers
+    })
     })
     .sort(function(){
         // YOUR CODE HERE
+    fullname.sort(function(a, b){
+        if(a.fullname < b.fullname) return -1;
+        if(a.fullname > b.fullname) return 1;
+        return 0
+    })
     })
 
 // tests
