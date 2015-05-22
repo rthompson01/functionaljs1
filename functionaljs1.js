@@ -71,14 +71,15 @@ console.assert(squares[3] === 16)
 
 function filter(array, callback){
     // YOUR CODE HERE
-    ["1", "2", "3", "4"].filter((v)) = v.length = 5
-}
+    var evens = numbers.filter(function(even) {
+        return v%2 === 0
+    });
 
 // tests
 // ---
-//var evens = filter([1, 2, 3, 4], function(v){ return v%2 === 0 })
-//console.assert(evens[0] === 2)
-//console.assert(evens[1] === 4)
+var evens = filter([1, 2, 3, 4], function(v){ return v%2 === 0 })
+console.assert(evens[0] === 2)
+console.assert(evens[1] === 4)
 
 
 // ----------------------------
@@ -88,8 +89,10 @@ function filter(array, callback){
 
 function sum(){
     // YOUR CODE HERE
-    function sumVaridic(){ return [].slice.call(arguments).red
+    function sumVariadic(){ return [].slice.call(arguments).red
 }
+
+//    var sum = ((...y) => y.reduce((a,v) => a+v, 0))
 
 // tests
 // ---
@@ -111,12 +114,15 @@ var names = [
 
 names.sort(function(a, b){
     // YOUR CODE HERE
-    user.sort(function a, b){
-        if(a.name < b.name) return -1;
-        if(a.name > b.name) return 1;
+    user.sort(function(a, b) {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
         return 0;
-    })
-})
+    }
+    )
+}
+)
+
 
 // tests
 // ---
@@ -144,6 +150,7 @@ var customers = [
 var results = customers
     .filter(function(){
         // YOUR CODE HERE
+        var results = customers.filter(function(first){
     })
     .map(function(){
         // YOUR CODE HERE
