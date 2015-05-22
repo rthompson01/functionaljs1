@@ -49,9 +49,8 @@ console.assert(
 
 function map(array, callback){
     // YOUR CODE HERE
-var numbers = ["1", "2,", "3", "4"]
-var squares = numbers.map(function(num) {
-    return num * num;
+var squares = array.map(function(num) {
+    return callback(num)
     });
 }
 
@@ -151,7 +150,7 @@ var results = customers
     .filter(function(){
         // YOUR CODE HERE
         var results = customers.filter(function(first) 
-            text()[0] === J{
+           text()[0] === J{
     })
     }
     )
