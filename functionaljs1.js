@@ -7,8 +7,8 @@
 function forEach(array, callback) {
     // YOUR CODE HERE
     for (var i = 0; i < array.length; i++) {
-    callback(array[i])
-}
+        callback(array[i], i array)
+    }
 }
 
 
@@ -29,9 +29,9 @@ function reduce(arr, cb, defaultValue){
         // YOUR CODE HERE
     var a = defaultValue ? defaultValue : arr.shift()
     forEach(arr, function(v, i, arr){
-        a = cb(a, v, i, arr)
+        a = callback(a, v, i, arr)
     })
-    return a
+    return a;
 }
 
 
@@ -49,9 +49,11 @@ console.assert(
 
 function map(array, callback){
     // YOUR CODE HERE
-var squares = array.map(function(num) {
-    return callback(num)
+    var newArray = []
+    forEach(array, function(v, i, arr) {
+        newArray.push(callback(v, i arr));
     });
+    return newArray;    
 }
 
 // tests
@@ -70,9 +72,15 @@ console.assert(squares[3] === 16)
 
 function filter(array, callback){
     // YOUR CODE HERE
-    var evens = numbers.filter(function(even) {
-        return v%2 === 0
-    });
+    var evens = []
+    reduce(array, function(evens, v, i, arr) {
+        if (callback(v, i, arr)) {
+            evens.push(v)
+        }
+        return evens
+    }, evens)
+    return evens;
+}
 
 // tests
 // ---
@@ -88,7 +96,10 @@ console.assert(evens[1] === 4)
 
 function sum(){
     // YOUR CODE HERE
-    function sumVariadic(){ return [].slice.call(arguments).red
+    var arr = Array.prototype.slice.call(arguments)
+    return reduce(arr, function(a, v) {
+        return a + v;
+    }, 0);
 }
 
 //    var sum = ((...y) => y.reduce((a,v) => a+v, 0))
@@ -114,13 +125,12 @@ var names = [
 names.sort(function(a, b){
     // YOUR CODE HERE
     user.sort(function(a, b) {
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
+        if (a.name < b.name) {
+            return -1;}
+        if (a.name > b.name) {
+            return 1;}
         return 0;
-    }
-    )
-}
-)
+    });
 
 
 // tests
@@ -130,7 +140,7 @@ console.assert(names[1].name === "Jesse")
 console.assert(names[2].name === "Matt")
 
 
-
+//#6 not yet complete
 // ----------------------------
 // 6. Using Array.map(), Array.filter(), and Array.sort() on the
 // array below:
